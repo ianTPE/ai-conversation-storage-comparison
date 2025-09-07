@@ -211,19 +211,7 @@ response = requests.post(
 
 ---
 
-### 6. **OpenAI 傳統模式**
-```python
-# (前面已展示代碼)
-```
-
-**特點：**
-- **高工作量**：需要手動維護 `messages` 列表
-- **標準格式**：業界標準，文檔完善
-- **無自動存儲**：完全依賴開發者實現
-
----
-
-### 7. **Qwen (阿里雲)**
+### 6. **Qwen (阿里雲)**
 ```python
 from dashscope import Generation
 
@@ -252,7 +240,7 @@ messages.append({
 
 ---
 
-### 8. **DeepSeek**
+### 7. **DeepSeek**
 ```python
 from openai import OpenAI
 client = OpenAI(
@@ -283,7 +271,7 @@ response = client.chat.completions.create(
 - **兼容 OpenAI**：API 格式兼容
 - **成本考量**：需要仔細管理歷史長度
 
-### 9. **Claude (Anthropic)**
+### 8. **Claude (Anthropic)**
 ```python
 import anthropic
 
