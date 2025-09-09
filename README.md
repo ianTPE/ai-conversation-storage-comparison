@@ -123,7 +123,29 @@ messages_list = client.chat.completions.messages.list(completion_id=completion_i
 
 ---
 
-### 3. **Gemini (Google)** 🥈
+### 2. **Grok (X.ai)** 🥈
+```python
+from grok import GrokClient
+
+client = GrokClient()
+
+# 🚀 極低工作量：完全自動化對話管理
+chat = client.create_chat()
+response1 = chat.append("Hello, how are you?")
+response2 = chat.append("Tell me about AI")
+
+# 自動維護對話歷史 - 零手動操作
+print(chat.history)  # 自動包含所有對話
+```
+
+**🎯 核心優勢：**
+- **極低工作量**：`chat.append()` 完全自動管理
+- **內建狀態管理**：開發者無需任何手動操作
+- **最簡開發體驗**：API 設計最直觀
+
+---
+
+### 3. **Gemini (Google)** 🥉
 ```python
 import google.generativeai as genai
 
@@ -150,28 +172,6 @@ chat = model.start_chat(history=[
 - **會話期間持久化**：自動保持對話狀態
 - **多媒體支援**：支援圖片、音頻等
 - **智能狀態管理**：內建對話邏輯
-
----
-
-### 4. **Grok (X.ai)** 🥉
-```python
-from grok import GrokClient
-
-client = GrokClient()
-
-# 🚀 極低工作量：完全自動化對話管理
-chat = client.create_chat()
-response1 = chat.append("Hello, how are you?")
-response2 = chat.append("Tell me about AI")
-
-# 自動維護對話歷史 - 零手動操作
-print(chat.history)  # 自動包含所有對話
-```
-
-**🎯 核心優勢：**
-- **極低工作量**：`chat.append()` 完全自動管理
-- **內建狀態管理**：開發者無需任何手動操作
-- **最簡開發體驗**：API 設計最直觀
 
 ---
 
