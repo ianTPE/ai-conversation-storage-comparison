@@ -56,7 +56,29 @@ from openai import OpenAI
 client = OpenAI()
 
 # 🚀 零存儲工作量：一行代碼永久存儲
-response = client.responses.create(\n    model=\"gpt-5\",  # 更新為 GPT-5 模型\n    messages=[\n        {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\n        {\"role\": \"user\", \"content\": \"Hello!\"}\n    ],\n    store=True,  # 🎯 關鍵：自動永久存儲所有對話\n    verbosity=\"medium\",  # 新參數：控制回應詳細程度 (low, medium, high)\n    reasoning_effort=\"minimal\"  # 新參數：控制推理水平 (minimal for quick responses)\n)\n\n# 繼續對話 - 完全自動管理\ncontinue_response = client.responses.create(\n    model=\"gpt-5\",\n    messages=[{\"role\": \"user\", \"content\": \"Tell me more\"}],\n    store=True,\n    parent=response.id,  # 自動關聯對話歷史\n    verbosity=\"high\"  # 示例：設定為高詳細度\n)\n\n# 檢索歷史對話\nhistory = client.responses.list()\nspecific_response = client.responses.retrieve(response.id)\n```
+response = client.responses.create(
+    model="gpt-5",  # 更新為 GPT-5 模型
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Hello!"}
+    ],
+    store=True,  # 🎯 關鍵：自動永久存儲所有對話
+    verbosity="medium",  # 新參數：控制回應詳細程度 (low, medium, high)
+    reasoning_effort="minimal"  # 新參數：控制推理水平 (minimal for quick responses)
+)
+
+# 繼續對話 - 完全自動管理
+continue_response = client.responses.create(
+    model="gpt-5",
+    messages=[{"role": "user", "content": "Tell me more"}],
+    store=True,
+    parent=response.id,  # 自動關聯對話歷史
+    verbosity="high"  # 示例：設定為高詳細度
+)
+
+# 檢索歷史對話
+history = client.responses.list()
+specific_response = client.responses.retrieve(response.id)\n```
 
 **🎯 GPT-5 新參數說明：**\n- **verbosity**: 控制回應的詳細程度（low: 簡短、medium: 默認、high: 全面）。\n- **reasoning_effort**: 調整推理深度（minimal: 快速回應，適合簡單任務）。\n\n這些參數讓開發更靈活，減少不必要的計算。
 
