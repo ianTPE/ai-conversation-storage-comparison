@@ -80,9 +80,14 @@ continue_response = client.responses.create(
 
 # 檢索歷史對話
 history = client.responses.list()
-specific_response = client.responses.retrieve(response.id)\n```
+specific_response = client.responses.retrieve(response.id)
+```
 
-**🎯 GPT-5 新參數說明：**\n- **verbosity**: 控制回應的詳細程度（low: 簡短、medium: 默認、high: 全面）。\n- **reasoning_effort**: 調整推理深度（minimal: 快速回應，適合簡單任務）。\n\n這些參數讓開發更靈活，減少不必要的計算。
+**🎯 GPT-5 新參數說明：**
+- **verbosity**: 控制回應的詳細程度（low: 簡短、medium: 默認、high: 全面）
+- **reasoning_effort**: 調整推理深度（minimal: 快速回應，適合簡單任務）
+
+這些參數讓開發更靈活，減少不必要的計算。
 
 **🎯 核心優勢：**
 - **零存儲工作量**：`store=True` 一行搞定
@@ -122,10 +127,9 @@ messages_list = client.chat.completions.messages.list(completion_id=completion_i
 - 需要手動維護 `messages` 列表
 - 2025年新增：可檢索特定 completion 的 messages
 - 支援多種角色：system, user, assistant, developer
-
 ---
 
-### 2. **Grok (X.ai)** 🥈
+### 3. **Grok (X.ai)** 🥉
 ```python
 from grok import GrokClient
 
@@ -147,7 +151,7 @@ print(chat.history)  # 自動包含所有對話
 
 ---
 
-### 3. **Gemini (Google)** 🥉
+### 4. **Gemini (Google)**
 ```python
 import google.generativeai as genai
 
