@@ -27,12 +27,12 @@ OpenAI 在 2025年推出的 **Responses API** 徹底改變了對話存儲方式�
 | 🏆 1 | **OpenAI Responses API** | ✅ 完全自動 | **零工作量** | 永久 | 雲端自動存儲 | 強大 | `/v1/responses` |
 | 🥈 2 | **Grok (X.ai)** | ✅ 完全自動 | **極低** | 會話期間 | `chat.append()` 自動管理 | 中等 | `/v1/chat/completions` |
 | 🥉 3 | **Gemini (Google)** | ✅ 完全自動 | **極低** | 會話期間 | `start_chat()` 自動維護 | 中等 | `/v1beta/models/*/generateContent` |
-| 4 | **Kimi-K2 (月之暗面)** | ⚠️ 半自動 | **中等** | Session 期間 | Session 模式內自動 | 中等 | `/v1/chat/completions` |
-| 5 | **OpenAI 傳統** | ❌ 手動 | **高** | 無 | 手動 `messages` 列表 | 基礎 | `/v1/chat/completions` |
+| 4 | **Claude Sonnet 4.5 (Anthropic)** | ⚠️ 半自動 | **中高** | 跨會話 | Memory Tool + Context Editing | 強大 | `/v1/messages` |
+| 5 | **Kimi-K2 (月之暗面)** | ⚠️ 半自動 | **中等** | Session 期間 | Session 模式內自動 | 中等 | `/v1/chat/completions` |
 | 6 | **Qwen3-Max-Preview** | ⚠️ 半自動 | **中等** | 會話期間 | ChatML 自動維護 + 工具調用管理 | 強大 | `/compatible-mode/v1/chat/completions` |
-| 7 | **Qwen 傳統模式** | ❌ 手動 | **高** | 無 | 手動 `messages` 列表 | 基礎 | `/compatible-mode/v1/chat/completions` |
-| 8 | **DeepSeek** | ❌ 手動 | **很高** | 無 | 每次傳完整歷史 | 基礎 | `/chat/completions` |
-| 9 | **Claude Sonnet 4.5 (Anthropic)** | ⚠️ 半自動 | **中高** | 跨會話 | Memory Tool + Context Editing | 強大 | `/v1/messages` |
+| 7 | **OpenAI 傳統** | ❌ 手動 | **高** | 無 | 手動 `messages` 列表 | 基礎 | `/v1/chat/completions` |
+| 8 | **Qwen 傳統模式** | ❌ 手動 | **高** | 無 | 手動 `messages` 列表 | 基礎 | `/compatible-mode/v1/chat/completions` |
+| 9 | **DeepSeek** | ❌ 手動 | **很高** | 無 | 每次傳完整歷史 | 基礎 | `/chat/completions` |
 
 ### 🔍 自動化等級說明
 
