@@ -154,7 +154,7 @@ branch_chat.append(user("Ask a different question"))
 **🎯 2026年1月 最新狀態 (Context7 Verified)：**
 - **Grok 4.1 / 4.2**: Grok 4.1 Fast 提供 **200萬 token** 上下文，且價格極低 ($0.20/1M input)。
 - **Stateful API 詳解**:
-  - **Resume**: 通過 `previous_response_id` 參數，可以從任意歷史節點恢復對話，無需搬運歷史 `messages`。
+  - **Resume**: 通過 `previous_response_id` 參數，可以從任意歷史節點恢復對話，無需搬運歷史 `messages`。(⚠️ 注意：目前僅 **Python SDK** 支援此功能，標準 REST API 暫不支援)
   - **Branching**: 支援從同一節點分叉出多條對話線 (Tree of Thought)。
   - **Management**: 提供 `get_stored_completion` 和 `delete_stored_completion` 進行 CRUD 操作。
 - **Native MCP Support**: 支援連接遠端 MCP (Model Context Protocol) 服務器。
